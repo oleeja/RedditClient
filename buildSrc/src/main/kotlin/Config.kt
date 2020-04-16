@@ -89,6 +89,7 @@ object Config {
         const val okhttp_interceptor = "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
         const val retrofit = "com.squareup.retrofit2:retrofit:$retrofitVersion"
         const val retrofit_gson = "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+        const val retrofit_rx = "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
         const val picasso = "com.squareup.picasso:picasso:$picassoVersion"
         const val rxAndroid = "io.reactivex.rxjava2:rxandroid:${Versions.rx}"
         const val rxJava = "io.reactivex.rxjava2:rxjava:${Versions.rx}"

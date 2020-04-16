@@ -1,6 +1,6 @@
 package data.source.api
 
-import data.dto.RedditNewsResponse
+import data.dto.RedditResponse
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -13,5 +13,5 @@ interface RedditService {
 
     @GET("/top.json")
     fun getTop(@Query("after") after: String,
-               @Query("limit") limit: String): Single<RedditNewsResponse>
+               @Query("limit") limit: String): Single<RedditResponse>
 }

@@ -67,6 +67,7 @@ dependencies {
     implementation(Config.ThirdPartyLibs.okhttp_interceptor)
     implementation(Config.ThirdPartyLibs.retrofit)
     implementation(Config.ThirdPartyLibs.retrofit_gson)
+    implementation(Config.ThirdPartyLibs.retrofit_rx)
 
     api(Config.ThirdPartyLibs.rxAndroid)
     api(Config.ThirdPartyLibs.rxJava)
