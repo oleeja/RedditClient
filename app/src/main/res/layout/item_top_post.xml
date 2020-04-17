@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="model"
+            type="com.oleeja.reditclient.domain.models.RedditTopPost" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_padding">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/titleText"
+                style="@style/TitleText"
+                android:text="@{model.title}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Spider-man returns" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/authorText"
+                android:text="@{@string/reddit_author_temp(model.author)}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@id/subredditText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleText"
+                tools:text="author: superhero" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/subredditText"
+                android:text="@{@string/reddit_subreddit_temp(model.subreddit)}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/authorText"
+                app:layout_constraintTop_toBottomOf="@id/titleText"
+                tools:text="subreddit: rrrwd" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/rattingText"
+                android:text="@{model.rating}"
+                style="@style/TitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@id/dateText"
+                app:layout_constraintEnd_toStartOf="@id/thumbnailImage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/authorText"
+                tools:text="457" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/thumbnailImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:image="@{model.thumbnailUrl}"
+                app:layout_constraintBottom_toTopOf="@id/commentsText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/rattingText"
+                app:layout_constraintTop_toBottomOf="@id/subredditText"
+                tools:src="@mipmap/ic_launcher" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:date="@{model.postDate}"
+                android:layout_marginStart="@dimen/default_padding"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="2 days ago" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/commentsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{@string/reddit_comments_temp(model.commentsCount)}"
+                android:layout_marginEnd="@dimen/default_padding"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="500 comments" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
