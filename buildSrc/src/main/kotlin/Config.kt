@@ -13,7 +13,6 @@ object Config {
         const val kotlinVersion = "1.3.70"
         const val androidGradleVersion = "3.6.0"
         const val ktxCoreVersion = "1.1.0"
-        const val playServicesVersion = "17.0.0"
 
         // Android
         const val appcompatVersion = "1.1.0"
@@ -23,27 +22,17 @@ object Config {
         const val swiperefreshlayoutVersion = "1.0.0"
         const val fragmentVersion = "1.2.0"
         const val lifecycleVersion = "2.2.0"
-        const val googleMapVersion = "17.0.0"
-        const val workVersion = "2.3.2"
         const val roomVersion = "2.2.4"
+        const val browser = "1.2.0"
 
         // Third-party libs
         const val koinVersion = "2.0.1"
         const val koinArchVersion = "0.9.3"
-        const val coroutinesVersion = "1.3.0-RC"
         const val lastAdapterVersion = "2.3.0"
         const val rx = "2.1.1"
 
         // Testing libs
         const val junitVersion = "4.12"
-        const val androidxJunitVersion = "1.1.1"
-        const val espressoCoreVersion = "3.2.0"
-        const val mokitoKotlin = "2.2.0"
-        const val mokitoInline = "3.0.0"
-        const val androidXCoreTestingVersion = "2.0.0"
-        const val androidXTestCoreVersion = "1.1.0"
-        const val androidXTestRunnerVersion = "1.1.1"
-        const val androidXTestRulesVersion = "1.1.1"
     }
 
     object Tools {
@@ -77,6 +66,7 @@ object Config {
         const val navigation_ui = "androidx.navigation:navigation-ui-ktx:$nav_version"
         const val room = "androidx.room:room-runtime:${Versions.roomVersion}"
         const val roomKtx = "androidx.room:room-ktx:${Versions.roomVersion}"
+        const val browser = "androidx.browser:browser:${Versions.browser}"
     }
 
     object ThirdPartyLibs {
@@ -93,6 +83,7 @@ object Config {
         const val picasso = "com.squareup.picasso:picasso:$picassoVersion"
         const val rxAndroid = "io.reactivex.rxjava2:rxandroid:${Versions.rx}"
         const val rxJava = "io.reactivex.rxjava2:rxjava:${Versions.rx}"
+        val lastAdapter = "com.github.nitrico.lastadapter:lastadapter:${Versions.lastAdapterVersion}"
     }
 
     object TestingLibs {
