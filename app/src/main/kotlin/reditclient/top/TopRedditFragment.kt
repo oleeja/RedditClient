@@ -29,7 +29,7 @@ class TopRedditFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapter = RedditAdapter(customTabCallback)
+        val adapter = RedditAdapter(customTabCallback, {topRedditViewModel.loadItems()})
         topRedditRecycler.adapter = adapter
         topRedditViewModel.postData.observe(viewLifecycleOwner, Observer { result ->
             adapter.addItems(result)
