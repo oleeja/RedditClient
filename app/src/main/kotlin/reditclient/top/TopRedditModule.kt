@@ -21,6 +21,6 @@ val topRedditInteractorModule = module {
 
 val topRedditRepositoryModule = module {
     scope(named<TopRedditFragment>()){
-        scoped<TopRedditRepository> { TopRedditRepositoryImpl(get()) }
+        scoped<TopRedditRepository> { TopRedditRepositoryImpl(get(), get()) }
     }
 }
