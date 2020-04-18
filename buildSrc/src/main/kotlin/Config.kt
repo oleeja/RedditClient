@@ -33,6 +33,7 @@ object Config {
 
         // Testing libs
         const val junitVersion = "4.12"
+        const val androidxJunitVersion = "1.1.1"
     }
 
     object Tools {
@@ -84,11 +85,13 @@ object Config {
         const val picasso = "com.squareup.picasso:picasso:$picassoVersion"
         const val rxAndroid = "io.reactivex.rxjava2:rxandroid:${Versions.rx}"
         const val rxJava = "io.reactivex.rxjava2:rxjava:${Versions.rx}"
-        val lastAdapter = "com.github.nitrico.lastadapter:lastadapter:${Versions.lastAdapterVersion}"
+        const val lastAdapter =
+            "com.github.nitrico.lastadapter:lastadapter:${Versions.lastAdapterVersion}"
     }
 
     object TestingLibs {
         const val junit = "junit:junit:${Versions.junitVersion}"
+        const val androidxJunit = "androidx.test.ext:junit:${Versions.androidxJunitVersion}"
     }
 
     object AnnotationProcessors{
