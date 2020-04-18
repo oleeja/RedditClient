@@ -77,4 +77,7 @@ dependencies {
     implementation(Config.ThirdPartyLibs.picasso)
 
     kapt(Config.AnnotationProcessors.room)
+
+    testImplementation(Config.TestingLibs.junit)
+    androidTestImplementation(Config.TestingLibs.androidxJunit)
 }

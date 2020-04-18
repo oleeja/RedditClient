@@ -34,6 +34,8 @@ class TopRedditFragment : BaseFragment() {
         topRedditViewModel.postData.observe(viewLifecycleOwner, Observer { result ->
             adapter.addItems(result)
         })
+
+        topRedditViewModel.error.observe(viewLifecycleOwner, Observer { showToast(it) })
     }
 
     private val customTabCallback = { url: String ->

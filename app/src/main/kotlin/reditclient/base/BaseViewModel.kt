@@ -1,30 +1,14 @@
 package reditclient.base
 
-import androidx.databinding.Observable
-import androidx.databinding.PropertyChangeRegistry
 import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import io.reactivex.functions.Consumer
 
-abstract class BaseViewModel : ViewModel(), LifecycleObserver, Observable  {
-    private val callbacks: PropertyChangeRegistry = PropertyChangeRegistry()
-
-    override fun addOnPropertyChangedCallback(
-        callback: Observable.OnPropertyChangedCallback
-    ) {
-        callbacks.add(callback)
+abstract class BaseViewModel : ViewModel(), LifecycleObserver {
+    val error by lazy {
+        MutableLiveData<String>()
     }
 
-    override fun removeOnPropertyChangedCallback(
-        callback: Observable.OnPropertyChangedCallback
-    ) {
-        callbacks.remove(callback)
-    }
-
-    fun notifyChange() {
-        callbacks.notifyCallbacks(this, 0, null)
-    }
-
-    fun notifyPropertyChanged(fieldId: Int) {
-        callbacks.notifyCallbacks(this, fieldId, null)
-    }
+    val errorHandler = Consumer<Throwable> { it.message?.let { cause -> error.postValue(cause) } }
 }
