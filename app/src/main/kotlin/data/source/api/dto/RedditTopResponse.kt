@@ -1,4 +1,4 @@
-package data.dto
+package data.source.api.dto
 
 import com.google.gson.annotations.SerializedName
 

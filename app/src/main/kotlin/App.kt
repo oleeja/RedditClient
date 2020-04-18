@@ -4,7 +4,6 @@ import android.app.Application
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
-import reditclient.di.commonModule
 import reditclient.di.dataSourceModule
 import reditclient.di.retrofitNetworkModule
 import reditclient.top.topRedditInteractorModule
@@ -17,7 +16,7 @@ class App : Application() {
         startKoin {
             androidLogger()
             androidContext(this@App)
-            modules(commonModule + dataSourceModule + retrofitNetworkModule)
+            modules(dataSourceModule + retrofitNetworkModule)
             modules(topRedditViewModule + topRedditInteractorModule + topRedditRepositoryModule)
         }
     }
