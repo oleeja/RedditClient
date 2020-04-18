@@ -56,6 +56,7 @@ dependencies {
     implementation(Config.Android.navigation_ui)
     implementation(Config.Android.room)
     implementation(Config.Android.roomKtx)
+    implementation(Config.Android.roomRx)
     implementation(Config.Android.browser)
 
     implementation(Config.ThirdPartyLibs.koinCore)

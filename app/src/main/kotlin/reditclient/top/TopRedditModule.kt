@@ -1,5 +1,6 @@
 package reditclient.top
 
+import com.oleeja.reditclient.data.source.data.RedditListParametersProvider
 import data.repository.TopRedditRepositoryImpl
 import domain.interactor.TopRedditInteractor
 import domain.repository.TopRedditRepository
@@ -11,6 +12,9 @@ val topRedditViewModule = module{
     scope(named<TopRedditFragment>()){
         viewModel { TopRedditViewModel(get()) }
     }
+    scope(named<TopRedditFragment>()) {
+        scoped { RedditListParametersProvider() }
+    }
 }
 
 val topRedditInteractorModule = module {
@@ -21,6 +25,6 @@ val topRedditInteractorModule = module {
 
 val topRedditRepositoryModule = module {
     scope(named<TopRedditFragment>()){
-        scoped<TopRedditRepository> { TopRedditRepositoryImpl(get(), get()) }
+        scoped<TopRedditRepository> { TopRedditRepositoryImpl(get(), get(), get()) }
     }
 }

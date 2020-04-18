@@ -5,5 +5,6 @@ data class RedditListParametersProvider (
     var time: String = "day",
     var maxCount: Int = 50,
     var countOnPage: Int = 10,
+    var current: String = "",
     var after : String = ""
 )

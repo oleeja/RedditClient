@@ -15,7 +15,7 @@ class RedditAdapter(val onPostClick: (String) -> Unit?, val onEnd: () -> Unit) :
 
     private val FOOTER = 101
     private val postList = mutableListOf<RedditTopPost>()
-    private var loading = true
+    private var loading = false
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RedditItemViewHolder {
         val binding = if (viewType == FOOTER) {
@@ -41,13 +41,13 @@ class RedditAdapter(val onPostClick: (String) -> Unit?, val onEnd: () -> Unit) :
         } else {
             DataBindingUtil.getBinding<ItemLoadingBinding>(holder.itemView)
                 ?.apply { visibility = loading }
-            onEnd.invoke()
+            if (loading) onEnd.invoke()
         }
     }
 
     fun addItems(list: List<RedditTopPost>) {
+        loading = !list.isEmpty()
         if (list.isEmpty()) {
-            loading = false
             notifyItemChanged(postList.size)
         } else{
             val oldSize = postList.size

@@ -1,6 +1,6 @@
 package data.source.api
 
-import data.dto.RedditResponse
+import data.source.api.dto.RedditResponse
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -17,7 +17,6 @@ interface RedditService {
         @Path("subreddit") subreddit: String,
         @Query("t") time: String,
         @Query("after") after: String,
-        @Query("limit") limit: String,
-        @Query("count") count: String
+        @Query("limit") limit: String
     ): Single<RedditResponse>
 }

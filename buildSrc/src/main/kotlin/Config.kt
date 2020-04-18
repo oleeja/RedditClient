@@ -66,6 +66,7 @@ object Config {
         const val navigation_ui = "androidx.navigation:navigation-ui-ktx:$nav_version"
         const val room = "androidx.room:room-runtime:${Versions.roomVersion}"
         const val roomKtx = "androidx.room:room-ktx:${Versions.roomVersion}"
+        const val roomRx = "androidx.room:room-rxjava2:${Versions.roomVersion}"
         const val browser = "androidx.browser:browser:${Versions.browser}"
     }
 
