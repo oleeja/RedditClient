@@ -17,7 +17,7 @@ android {
         versionCode = Config.Android.versionCode
         versionName = Config.Android.versionName
 
-        testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     dataBinding.isEnabled = true
@@ -51,11 +51,12 @@ dependencies {
     implementation(Config.Android.material)
     implementation(Config.Android.constraintLayout)
     implementation(Config.Android.cardView)
-    implementation(Config.Android.swiperefreshlayout)
     implementation(Config.Android.navigation_fragment)
     implementation(Config.Android.navigation_ui)
     implementation(Config.Android.room)
     implementation(Config.Android.roomKtx)
+    implementation(Config.Android.roomRx)
+    implementation(Config.Android.browser)
 
     implementation(Config.ThirdPartyLibs.koinCore)
     implementation(Config.ThirdPartyLibs.koinScope)
@@ -67,6 +68,7 @@ dependencies {
     implementation(Config.ThirdPartyLibs.okhttp_interceptor)
     implementation(Config.ThirdPartyLibs.retrofit)
     implementation(Config.ThirdPartyLibs.retrofit_gson)
+    implementation(Config.ThirdPartyLibs.retrofit_rx)
 
     api(Config.ThirdPartyLibs.rxAndroid)
     api(Config.ThirdPartyLibs.rxJava)
@@ -74,4 +76,7 @@ dependencies {
     implementation(Config.ThirdPartyLibs.picasso)
 
     kapt(Config.AnnotationProcessors.room)
+
+    testImplementation(Config.TestingLibs.junit)
+    androidTestImplementation(Config.TestingLibs.androidxJunit)
 }
